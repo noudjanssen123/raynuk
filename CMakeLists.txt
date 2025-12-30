@@ -17,3 +17,6 @@ file(GLOB_RECURSE LIB_SOURCES "lib/*.c" "lib/*.cpp")
 add_library(${PROJECT_NAME} ${SOURCES} ${LIB_SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC "inc" "lib")
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib)
+
+add_executable(${PROJECT_NAME}_example example/main.cpp)
+target_link_libraries(${PROJECT_NAME}_example PUBLIC ${PROJECT_NAME})
